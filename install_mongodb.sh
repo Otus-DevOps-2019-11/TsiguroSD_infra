@@ -10,4 +10,3 @@ sudo apt-get install -y mongodb-org
 #run mongodb
 sudo systemctl start mongod
 sudo systemctl enable mongod
-sudo systemctl status mongod
