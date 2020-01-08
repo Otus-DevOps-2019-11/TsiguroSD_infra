@@ -5,7 +5,7 @@ TsiguroSD Infra repository
 
 ## HW cloud-testapp
 
-testapp_IP = 35.228.90.93
+testapp_IP = 35.228.90.93 \
 testapp_port = 9292
 
 Added 3 bash scripts:
