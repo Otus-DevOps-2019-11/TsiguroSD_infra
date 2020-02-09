@@ -51,3 +51,30 @@ gcloud compute instances create reddit-app3\
 ##Command to create firewall rule:
 
 gcloud compute firewall-rules create default-puma-server  --allow=tcp:9292 --target-tags='puma-server' --source-ranges=0.0.0.0/0
+
+#HW packer-base
+
+##Added packer template to create gcp image with mongodb and ruby
+
+  - ubuntu16.json
+
+##Created VM instance with image from previuos step:
+
+  - reddit-base image
+
+##Added parameters to template and created variables file:
+
+  - variables.json.example
+
+##Created baked image based on reddit-base image:
+
+  - immutable.json
+  - reddit-full image
+
+###Used systemd puma service config:
+
+  - files/puma.service
+
+##Added bash script to create VM instance with packer-full image:
+
+  - /config-scripts/create-reddit-vm.sh
