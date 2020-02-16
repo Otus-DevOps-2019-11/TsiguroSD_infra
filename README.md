@@ -27,15 +27,15 @@ someinternalhost_IP = 10.132.0.7
 testapp_IP = 35.228.90.93
 testapp_port = 9292
 
-##Added 3 bash scripts:
+## Added 3 bash scripts:
 
  - install_mongodb.sh
  - install_ruby.sh
  - deploy.sh
 
-##Added startup_script.sh
+## Added startup_script.sh
 
-##Command to create VM with gcloud and startup_script:
+## Command to create VM with gcloud and startup_script:
 
 gcloud compute instances create reddit-app3\
   --boot-disk-size=10GB \
@@ -48,33 +48,33 @@ gcloud compute instances create reddit-app3\
   --metadata-from-file startup-script=./startup_script.sh \
   --tags='puma-server'
 
-##Command to create firewall rule:
+## Command to create firewall rule:
 
 gcloud compute firewall-rules create default-puma-server  --allow=tcp:9292 --target-tags='puma-server' --source-ranges=0.0.0.0/0
 
-#HW packer-base
+# HW packer-base
 
-##Added packer template to create gcp image with mongodb and ruby
+## Added packer template to create gcp image with mongodb and ruby
 
   - ubuntu16.json
 
-##Created VM instance with image from previuos step:
+## Created VM instance with image from previuos step:
 
   - reddit-base image
 
-##Added parameters to template and created variables file:
+## Added parameters to template and created variables file:
 
   - variables.json.example
 
-##Created baked image based on reddit-base image:
+## Created baked image based on reddit-base image:
 
   - immutable.json
   - reddit-full image
 
-###Used systemd puma service config:
+### Used systemd puma service config:
 
   - files/puma.service
 
-##Added bash script to create VM instance with packer-full image:
+## Added bash script to create VM instance with packer-full image:
 
   - /config-scripts/create-reddit-vm.sh
