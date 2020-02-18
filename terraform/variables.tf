@@ -22,3 +22,9 @@ variable private_key_path {
 variable disk_image {
   description = "Disk image"
 }
+variable gce_ssh_user1 {
+}
+variable gce_ssh_user2 {
+}
+variable gce_ssh_user3 {
+}
