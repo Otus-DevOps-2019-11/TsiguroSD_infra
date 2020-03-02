@@ -28,3 +28,33 @@ variable gce_ssh_user2 {
 }
 variable gce_ssh_user3 {
 }
+variable count_app {
+  default = "1"
+}
+variable name_app {
+  default = "reddit-app"
+}
+
+variable health_check_port {
+  description = "Port for healthcheck backend service."
+}
+
+variable instance_group_name_port {
+  default = "http"
+}
+
+variable instance_group_port {
+  default = "9292"
+}
+
+variable forwarding_rule_port_range {
+  default = "80"
+}
+
+variable hc_check_interval_sec {
+  default = "1"
+}
+
+variable hc_timeout_sec {
+  default = "1"
+}
