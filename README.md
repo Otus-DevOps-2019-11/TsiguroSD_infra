@@ -78,3 +78,16 @@ gcloud compute firewall-rules create default-puma-server  --allow=tcp:9292 --tar
 ## Added bash script to create VM instance with packer-full image:
 
   - /config-scripts/create-reddit-vm.sh
+  
+# HW packer-base
+
+## Created VM instance with reddit app using terraform:
+ - main.tf
+ - outputs.tf
+ - terraform.tfvars
+ - variables.tf
+## Created firewall rule in main.tf
+## Added ssh keys to project metadata
+## Added http load balancer witn2 instances of reddit-app
+ - lb.tf
+ 
