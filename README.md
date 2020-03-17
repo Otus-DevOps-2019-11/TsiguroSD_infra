@@ -91,3 +91,19 @@ gcloud compute firewall-rules create default-puma-server  --allow=tcp:9292 --tar
 ## Added http load balancer witn2 instances of reddit-app
  - lb.tf
  
+  # HW terraform-2
+  
+  ## Added 3 modules:
+  - terraform/modules/app
+  - terraform/modules/db
+  - terraform/modules/vpc
+  
+  ## Added 2 environments, which use the same modules
+  - terraform/prod
+  - terraform/stage
+  
+  ## Added storage bucket for terraform state
+  
+  ## Added backend witn google cloud storage bucket
+  
+  
