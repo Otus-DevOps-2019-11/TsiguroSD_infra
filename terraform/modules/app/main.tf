@@ -15,9 +15,13 @@ resource "google_compute_instance" "app" {
   metadata = {
     ssh-keys = "appuser:${file(var.public_key_path)}"
   }
+}
+
+resource "null_resource" "install_app" {
+  count = var.provision_enabled ? 1 : 0
   connection {
     type  = "ssh"
-    host  = self.network_interface[0].access_config[0].nat_ip
+    host  = google_compute_instance.app.network_interface[0].access_config[0].nat_ip
     user  = "appuser"
     agent = false
     # путь до приватного ключа
