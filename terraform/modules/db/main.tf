@@ -25,7 +25,7 @@ connection {
 provisioner "remote-exec" {
     inline = [<<EOF
       set -e
-      sudo sed -i 's/bindIp: 127.0.0.1/bindIp: ${self.network_interface.0.network_ip}/g' /etc/mongod.conf
+      sudo sed -i 's/bindIp: 127.0.0.1/bindIp: 0.0.0.0 /g' /etc/mongod.conf
       sudo systemctl restart mongod
       EOF
     ]
@@ -41,5 +41,6 @@ resource "google_compute_firewall" "firewall_mongo" {
     ports = ["27017"]
   }
   target_tags = ["reddit-db"]
+  source_ranges = ["0.0.0.0/0"]
   source_tags = ["reddit-app"]
 }
