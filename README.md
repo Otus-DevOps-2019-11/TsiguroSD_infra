@@ -122,4 +122,7 @@ gcloud compute firewall-rules create default-puma-server  --allow=tcp:9292 --tar
 	service_account_file: "~/infra-2628190-8d7eaaf4711e.json"
 	
    Used 'ansible -i inventory.gcp.yml all -m ping'
+   
+   Added dynamic inventory with bash script dynamic-inventory.sh and dynamic-inventory.json
+   Used 'ansible all -i dynamic-inventory.sh -m ping'
   
