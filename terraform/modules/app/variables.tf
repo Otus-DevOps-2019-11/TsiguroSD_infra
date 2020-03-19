@@ -9,7 +9,7 @@ variable public_key_path {
 }
 variable app_disk_image {
   description = "Disk image for reddit app"
-  default = "ruby-base"
+  default = "ruby-base-ans"
 }
 variable source_ranges_puma {
   description = "Allowed IP adderesses to reddit"

@@ -10,7 +10,7 @@ variable public_key_path {
 
 variable db_disk_image {
   description = "Disk image for reddit db"
-  default = "mongodb-base"
+  default = "mongodb-base-ans"
 }
 
 variable vm_db_name {

@@ -9,7 +9,7 @@
             "type": "googlecompute",
             "project_id": "{{ user `project_id` }}",
             "image_name": "ruby-base-{{timestamp}}",
-            "image_family": "ruby-base",
+            "image_family": "ruby-base-ans",
             "source_image_family": "{{ user `source_image_family` }}",
             "zone": "europe-west1-b",
             "ssh_username": "appuser",
@@ -23,9 +23,8 @@
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
+            "type": "ansible",
+            "playbook_file": "ansible/packer_app.yml"
         }
     ]
 }

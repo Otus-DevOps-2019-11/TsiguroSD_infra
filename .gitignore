@@ -6,3 +6,4 @@ variables-full.json
 *.tfstate.backup
 *.tfvars
 .terraform/
+*.retry
