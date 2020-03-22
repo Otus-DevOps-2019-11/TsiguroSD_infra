@@ -129,12 +129,12 @@ Added backend witn google cloud storage bucket
 
    # HW ansible-2
 
-   1) Added playbook *reddit_app_one_play.yml* with one play for all hosts with tags.
+   1) Added playbook *reddit_app_one_play.yml* with one play for all hosts with tags.  
    To run playbook used "--limit <group_name>" and "--tags <tag>"
-   2) Added playbook *reddit_app_multiple_plays.yml* with different plays and tag used in play, not in task
+   2) Added playbook *reddit_app_multiple_plays.yml* with different plays and tag used in play, not in task  
    To run playbook used only "--tags <tag>"
    3) Added 4 playbooks *app.yml*, *db.yml*, *deploy.yml* and *site.yml*, which imports 3 others. No tags needed.
-   4) Updated dynamiv inventory with groups and using hostnames, also added var *ansible_host: networkInterfaces[0].accessConfigs[0].natIP* which force ansible to use IPs to connect to hosts.
+   4) Updated dynamiv inventory with groups and using hostnames, also added var *ansible_host: networkInterfaces[0].accessConfigs[0].natIP* which force ansible to use IPs to connect to hosts.  
    Replace hard-coded IP of MongoDB with magic variable *hostvars*
    5) Added playbooks for provosion ruby and mongo in packer images: *packer_app.yml*, *packer_db.yml*
    6) Changed provisioners in packer templates with ansible playbooks
@@ -142,14 +142,14 @@ Added backend witn google cloud storage bucket
 
    # HW ansible-3
 
-   1) Added roles app and db, initialized with "*ansible-galaxy init <role_name>*"
+   1) Added roles app and db, initialized with "*ansible-galaxy init <role_name>*"  
    Used this roles in site.yml
    2) Added prod and stage environments with separate inventories and group_vars
    3) Organised ansible directory with *playbooks/* and *old/* directories
-   4) Used community-role jdauphant.nginx to set App listen on 80 port with nginx
+   4) Used community-role jdauphant.nginx to set App listen on 80 port with nginx  
    Used *requirements.yml* file and `ansible-galaxy install -r environments/stage/requirements.yml`
    5) Opened http in terraform template
-   6) Used ansible-vault to encrypt user credentials, declared in prod and stage.
+   6) Used ansible-vault to encrypt user credentials, declared in prod and stage.  
    Used these credentials in *users.yml* playbook to create users on VMs
    7) Added dynamic inventory to prod and stage *inventory.gcp.yml*
 
