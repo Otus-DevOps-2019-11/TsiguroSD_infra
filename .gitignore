@@ -7,3 +7,4 @@ variables-full.json
 *.tfvars
 .terraform/
 *.retry
+jdauphant.nginx
