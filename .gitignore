@@ -18,3 +18,4 @@ jdauphant.nginx
 .pytest_cache
 
 venv
+.vscode
