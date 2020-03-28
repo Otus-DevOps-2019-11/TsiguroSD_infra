@@ -106,4 +106,23 @@ gcloud compute firewall-rules create default-puma-server  --allow=tcp:9292 --tar
   
   ## Added backend witn google cloud storage bucket
   
+  # HW ansible-1
+   
+   Added invetory files in ini and yml formats. 
+   Added dynamic inventory with gcp plugin:
+   
+
+    plugin: gcp_compute
+	projects:
+	  - infra-2628190
+	zones:
+  	  - "europe-west1-b"
+	filters: []
+	auth_kind: serviceaccount
+	service_account_file: "~/infra-2628190-8d7eaaf4711e.json"
+	
+   Used 'ansible -i inventory.gcp.yml all -m ping'
+   
+   Added dynamic inventory with bash script dynamic-inventory.sh and dynamic-inventory.json
+   Used 'ansible all -i dynamic-inventory.sh -m ping'
   
