@@ -155,4 +155,19 @@ Added backend witn google cloud storage bucket
 
    ### To-do list
 
-   Add TravisCI build settings to validate infra repo (HW with **)
+   - Add TravisCI build settings to validate infra repo (HW with **)
+   
+   # HW ansible-4
+   
+   1) Configured vagrantfile to create 2 vm 
+   2) Added provisioning with ansible playbooks
+   3) Added extra variables to configure nginx at app server
+   4) Added molecule configuration in db role
+   5) Added *test_default.py* with 3 testinfra testing functions
+   
+   ### To-do list
+   
+   - Move db role to another repository and configure importing it
+   - Add TravicCI to auto-test role in GCE
+   - Configure notifications in Slack with build status
+   
